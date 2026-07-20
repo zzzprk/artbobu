@@ -76,10 +76,13 @@ section{max-width:1080px;margin:0 auto;padding:72px 24px 8px;scroll-margin-top:6
 .cv-item .yr{color:var(--muted);font-variant-numeric:tabular-nums}
 .cv-item .ti{font-weight:500}
 .cv-item .vn{color:var(--muted);font-weight:300}
-.lang-en{display:none}
-.lang-ko{display:inline}
-body.lang-en .lang-ko{display:none !important}
-body.lang-en .lang-en{display:inline !important}
+/* show Korean and English together */
+.cv-item .lang-ko,.cv-item .lang-en{display:block}
+.cv-item .lang-en{color:var(--muted);font-weight:300;font-style:italic;margin-bottom:2px}
+.cv-item .vn{margin-top:3px}
+.cv-h .lang-ko,.cv-h .lang-en{display:inline}
+.cv-h .lang-en{font-weight:400;color:var(--muted)}
+.cv-h .lang-en::before{content:" · "}
 
 /* footer */
 footer{margin-top:96px;border-top:1px solid var(--line);scroll-margin-top:60px}
@@ -172,14 +175,7 @@ footer{margin-top:96px;border-top:1px solid var(--line);scroll-margin-top:60px}
 <figure class="work"><img alt="Collection of Brain Slices 설치 전경" loading="lazy" src="image/image_34_2.jpg" width="1076" height="705"/><figcaption><span class="t-kr">Collection of Brain Slices</span><span class="t-en">컬렉션 오브 브레인 슬라이스</span><br/>Solo Exhibition · 2016 · Studio Kura Gallery, 후쿠오카 Fukuoka</figcaption></figure>
 </section>
 <section id="cv">
-<div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px;gap:16px">
-<div class="sec-label" style="margin-bottom:0">CV</div>
-<div class="cv-lang-toggle">
-<button class="cv-lang-btn active" data-lang="ko">KOR</button>
-<span style="color:var(--muted);font-size:.75rem">/</span>
-<button class="cv-lang-btn" data-lang="en">ENG</button>
-</div>
-</div>
+<div class="sec-label">CV</div>
 <div class="cv-block">
 <div class="cv-h"><span class="lang-ko">개인전</span><span class="lang-en">Solo Exhibitions</span></div>
 <div class="cv-item"><div class="yr">2022</div><div><span class="ti"><span class="lang-ko">'시장에서, 시장에 의한, 시장을 위한 예술 프로젝트' 연필과 시장展</span><span class="lang-en">'Art For, By, and From the Market' Pencil and Market Exhibition</span></span> <span class="vn"><span class="lang-ko">— 차세대 artiStar지원(2년차) · 유성장갤러리 외 유성시장, 한국 대전</span><span class="lang-en">— Next Generation artiStar Support (Year 2) · Yuseong Market Gallery and Yuseong Market, Daejeon, Korea</span></span></div></div>
@@ -336,23 +332,6 @@ footer{margin-top:96px;border-top:1px solid var(--line);scroll-margin-top:60px}
   document.querySelectorAll('.work,.hero-fig').forEach(function(el){ io.observe(el); });
 })();
 
-(function(){
-  function apply(lang){
-    if(lang === 'en'){ document.body.classList.add('lang-en'); }
-    else { document.body.classList.remove('lang-en'); }
-    document.querySelectorAll('.cv-lang-btn').forEach(function(b){
-      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
-    });
-  }
-
-  apply('ko');
-
-  document.querySelectorAll('.cv-lang-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      apply(this.getAttribute('data-lang'));
-    });
-  });
-})();
 </script>
 </body>
 </html>
