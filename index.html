@@ -345,13 +345,11 @@ footer{margin-top:96px;border-top:1px solid var(--line);scroll-margin-top:60px}
     });
   }
 
-  apply(localStorage.getItem('cvLang') || 'ko');
+  apply('ko');
 
   document.querySelectorAll('.cv-lang-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
-      var lang = this.getAttribute('data-lang');
-      localStorage.setItem('cvLang', lang);
-      apply(lang);
+      apply(this.getAttribute('data-lang'));
     });
   });
 })();
