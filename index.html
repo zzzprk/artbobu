@@ -66,12 +66,19 @@ section{max-width:1080px;margin:0 auto;padding:72px 24px 8px}
 .work figcaption{text-align:center}
 
 /* cv */
+.cv-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.cv-lang-toggle{display:flex;gap:8px;font-size:.75rem;letter-spacing:.1em}
+.cv-lang-toggle button{background:none;border:1px solid var(--line);padding:6px 12px;cursor:pointer;color:var(--muted);transition:all .2s}
+.cv-lang-toggle button.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .cv-block{margin-bottom:44px}
 .cv-h{font-family:var(--serif);font-weight:600;font-size:1rem;margin-bottom:18px;letter-spacing:.02em}
 .cv-item{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.86rem}
 .cv-item .yr{color:var(--muted);font-variant-numeric:tabular-nums}
 .cv-item .ti{font-weight:500}
 .cv-item .vn{color:var(--muted);font-weight:300}
+.lang-en{display:none}
+body.lang-en .lang-ko{display:none}
+body.lang-en .lang-en{display:inline}
 
 /* footer */
 footer{margin-top:96px;border-top:1px solid var(--line)}
@@ -164,7 +171,14 @@ footer{margin-top:96px;border-top:1px solid var(--line)}
 <figure class="work"><img alt="Collection of Brain Slices 설치 전경" loading="lazy" src="image/image_34_2.jpg"/><figcaption><span class="t-kr">Collection of Brain Slices</span><span class="t-en">컬렉션 오브 브레인 슬라이스</span><br/>Solo Exhibition · 2016 · Studio Kura Gallery, 후쿠오카 Fukuoka</figcaption></figure>
 </section>
 <section id="cv">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px">
 <div class="sec-label">CV</div>
+<div class="cv-lang-toggle">
+<button class="cv-lang-btn active" data-lang="ko">KOR</button>
+<span style="color:var(--muted)">/</span>
+<button class="cv-lang-btn" data-lang="en">ENG</button>
+</div>
+</div>
 <div class="cv-block">
 <div class="cv-h">개인전 · Solo Exhibitions</div>
 <div class="cv-item"><div class="yr">2022</div><div><span class="ti">'시장에서, 시장에 의한, 시장을 위한 예술 프로젝트' 연필과 시장展 / Art Project 'For the Market, By the Market, From the Market' Pencil and Market Exhibition</span> <span class="vn">— 차세대 artiStar지원(2년차) · 유성장갤러리 외 유성시장, 한국 대전 / Next Generation artiStar Support (Year 2) · Ueseong Market Gallery and Market, Daejeon, Korea</span></div></div>
@@ -319,6 +333,37 @@ footer{margin-top:96px;border-top:1px solid var(--line)}
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.work,.hero-fig').forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var savedLang = localStorage.getItem('cvLang') || 'ko';
+  if(savedLang === 'en') document.body.classList.add('lang-en');
+
+  document.querySelectorAll('.cv-lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = this.getAttribute('data-lang');
+      document.querySelectorAll('.cv-lang-btn').forEach(function(b){ b.classList.remove('active'); });
+      this.classList.add('active');
+      if(lang === 'en'){
+        document.body.classList.add('lang-en');
+        localStorage.setItem('cvLang', 'en');
+      } else {
+        document.body.classList.remove('lang-en');
+        localStorage.setItem('cvLang', 'ko');
+      }
+    });
+  });
+
+  function splitLanguages(){
+    document.querySelectorAll('.cv-item .ti, .cv-item .vn').forEach(function(el){
+      var text = el.textContent;
+      if(text.indexOf(' / ') > -1){
+        var parts = text.split(' / ');
+        el.innerHTML = '<span class="lang-ko">'+parts[0]+'</span> / <span class="lang-en">'+parts[1]+'</span>';
+      }
+    });
+  }
+  splitLanguages();
 })();
 </script>
 </body>
