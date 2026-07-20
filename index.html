@@ -77,8 +77,9 @@ section{max-width:1080px;margin:0 auto;padding:72px 24px 8px}
 .cv-item .ti{font-weight:500}
 .cv-item .vn{color:var(--muted);font-weight:300}
 .lang-en{display:none}
-body.lang-en .lang-ko{display:none}
-body.lang-en .lang-en{display:inline}
+.lang-ko{display:inline}
+body.lang-en .lang-ko{display:none !important}
+body.lang-en .lang-en{display:inline !important}
 
 /* footer */
 footer{margin-top:96px;border-top:1px solid var(--line)}
@@ -359,11 +360,17 @@ footer{margin-top:96px;border-top:1px solid var(--line)}
       var text = el.textContent;
       if(text.indexOf(' / ') > -1){
         var parts = text.split(' / ');
-        el.innerHTML = '<span class="lang-ko">'+parts[0]+'</span> / <span class="lang-en">'+parts[1]+'</span>';
+        if(parts.length === 2 && parts[0] && parts[1]){
+          el.innerHTML = '<span class="lang-ko">'+parts[0].trim()+'</span> / <span class="lang-en">'+parts[1].trim()+'</span>';
+        }
       }
     });
   }
-  splitLanguages();
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', splitLanguages);
+  } else {
+    splitLanguages();
+  }
 })();
 </script>
 </body>
