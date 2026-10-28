@@ -121,50 +121,57 @@ footer{margin-top:96px;border-top:1px solid var(--line);scroll-margin-top:60px}
 @media (max-width:640px){.about-grid{grid-template-columns:1fr;gap:28px}.contact-list div{grid-template-columns:1fr;gap:2px}.nav-links{gap:12px;font-size:.72rem;letter-spacing:.06em}.nav-inner{flex-wrap:wrap}}
 
 .yt{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.exh-head{max-width:880px;margin:0 auto 36px;text-align:center}
-.exh-head .t-kr{font-family:var(--serif);font-weight:600;font-size:1.05rem}
-.exh-head .t-en{font-style:italic;color:var(--muted);font-size:.85rem}
-.exh-head .vn{color:var(--muted);font-size:.82rem;margin-top:4px}
-.exh-head + .work{margin-bottom:96px}
-.year-mark{margin:96px 0 24px;justify-content:center}
+.exh-list{border-bottom:1px solid var(--line)}
+.exh{border-top:1px solid var(--line)}
+.exh summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:72px 1fr 24px;gap:18px;align-items:start;padding:24px 4px;transition:background .2s}
+.exh summary::-webkit-details-marker{display:none}
+.exh summary:hover{background:rgba(0,0,0,.025)}
+.exh .y{font-family:var(--serif);font-weight:300;font-size:1.5rem;letter-spacing:.04em;line-height:1.3}
+.exh .meta{display:block}
+.exh .meta .t-kr{display:block;font-family:var(--serif);font-weight:600;font-size:1.02rem;line-height:1.5}
+.exh .meta .t-en{display:block;font-style:italic;color:var(--muted);font-size:.84rem;margin-top:2px}
+.exh .meta .vn{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+.exh .tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;padding-top:4px}
+.exh .tag{font-size:.7rem;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:2px 10px;white-space:nowrap}
+.exh .chev{width:10px;height:10px;margin-top:10px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);transition:transform .25s}
+.exh[open] .chev{transform:rotate(225deg)}
+.exh[open] summary{background:rgba(0,0,0,.02)}
+.exh-body{padding:36px 0 24px}
+.exh-body .work{margin:0 auto 72px}
+.exh-gallery{column-count:2;column-gap:12px;max-width:880px;margin:0 auto 24px}
+.exh-gallery a{display:block;margin-bottom:12px;break-inside:avoid}
+.exh-gallery img{width:100%;height:auto;border:1px solid var(--line)}
+@media (max-width:640px){.exh-gallery{column-count:1}}
+.exh-body .work:last-child{margin-bottom:24px}
+@media (max-width:640px){
+  .exh summary{grid-template-columns:52px 1fr 18px;gap:12px}
+  .exh .y{font-size:1.15rem}
+}
+
+.wtabs{display:flex;gap:10px 34px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:56px}
+.wtab{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:10px 2px 12px;cursor:pointer;font:inherit;color:var(--muted);text-align:left;transition:color .2s,border-color .2s}
+.wtab .t-kr{font-family:var(--serif);font-weight:600;font-size:1.05rem}
+.wtab .t-en{font-style:italic;font-size:.8rem;margin-left:.5em}
+.wtab:hover{color:var(--ink)}
+.wtab.on{color:var(--ink);border-bottom-color:var(--ink)}
+.wcat[hidden]{display:none}
+.wempty{color:var(--muted);font-size:.9rem;padding:40px 0}
+.work video{display:block;width:100%;max-width:640px;height:auto;margin:24px auto 0;border:1px solid var(--line);background:#000}
+@media (max-width:640px){.wtabs{gap:6px 20px}.wtab .t-en{display:block;margin-left:0}}
 </style></head><body>
 <nav><div class="nav-inner"><a class="logo" href="index.html">켡 HYUNZ</a><div class="nav-links"><a href="about.html">about</a><a href="text.html">text</a><a href="exhibition.html">exhibition</a><a href="works.html" class="cur">works</a><a href="contact.html">contact</a></div></div></nav>
-<div class="page-head"><h1>works</h1><p>Works</p></div><section>
-
-
-
-
-
-
-
-
-
-
-<figure class="work"><img alt="원형 목판 회화와 맵핑 애니메이션" loading="lazy" src="image/image_011.jpg" width="1100" height="360"/><figcaption><span class="t-kr">장날_국화 · 장날_파라솔 · 단추</span><span class="t-en">Market Day_Chrysanthemum · Parasol · Buttons</span><br/>목판에 아크릴릭, 프로젝션 맵핑 애니메이션 · Acrylic on wood panel, projection mapping animation · 120×120cm, 150×150cm · 2022–2024</figcaption></figure>
-<figure class="work"><img alt="원형 목판 위 맵핑 애니메이션 여섯 장면" loading="lazy" src="image/image_012.jpg" width="1100" height="962"/><figcaption><span class="t-kr">마음 — 원 안의 애니메이션</span><span class="t-en">Maeum — Animations within a Circle</span><br/>프로젝션 맵핑 애니메이션 · Projection mapping animation · 2024<span class="desc">만다라는 원(circle)을 뜻하는 산스크리트어로, 우주와 마음의 모양으로 표현되기도 한다. 내 안의 우주를 담는 원 안의 애니메이션 — 시장의 장날, 파라솔의 추상, 장례를 치르는 장날을 담은 영상들.</span></figcaption></figure><figure class="work"><img alt="장날_국화 · 장날_파라솔 · 단추" loading="lazy" src="image/image_062.jpg" width="1400" height="502"/><figcaption><span class="t-kr">장날_국화 · 장날_파라솔 · 단추</span><span class="t-en">Market Day_Chrysanthemum · Parasol · Buttons</span><br/>목판에 아크릴릭, 프로젝션 맵핑 애니메이션 · Acrylic on wood panel, projection mapping animation · 120×120cm, 150×150cm · 2022–2024</figcaption></figure>
-
-
-
-
-
-
-
-
-
-<figure class="work"><img alt="파라솔, 피어나다 — 조명 설치" loading="lazy" src="image/image_033.jpg" width="1096" height="1090"/><figcaption><span class="t-kr">파라솔, 피어나다</span><span class="t-en">Parasols in Bloom</span><br/>인터렉션 조명 목공 설치 · Interactive light and woodwork installation · 150×220cm · 2019</figcaption></figure>
-<figure class="work"><img alt="공연 무대 위 맵핑" loading="lazy" src="image/image_043.jpg" width="361" height="242"/><figcaption><span class="t-kr">연결 융합 승화</span><span class="t-en">Connection · Fusion · Sublimation</span><br/>패브릭·조형물 위에 맵핑 · Mapping on fabric and sculptural objects · 50min · 2024 · 모두예술극장 Modu Art Theater</figcaption></figure>
-
-
-
-
-
-<figure class="work"><img alt="Line of Drawing 설치 전경" loading="lazy" src="image/image_027.jpg" width="1100" height="534"/><figcaption><span class="t-kr">Line of Drawing</span><span class="t-en">라인 오브 드로잉</span><br/>종이, 애니메이션 · Paper, animation · 2020</figcaption></figure>
-
-<figure class="work"><img alt="웰컴 투 PP 온라인 영상 스크린샷 1" loading="lazy" src="image/image_029.jpg" width="1317" height="1047"/></figure>
-<figure class="work"><img alt="웰컴 투 PP 온라인 영상 스크린샷 2" loading="lazy" src="image/image_030.jpg" width="766" height="433"/></figure>
-<figure class="work"><img alt="웰컴 투 PP 온라인 영상 스크린샷 3" loading="lazy" src="image/image_031.jpg" width="766" height="433"/><figcaption><span class="t-kr">웰컴 투 PP (Paper Playground)</span><span class="t-en">Welcome to PP (Paper Playground)</span><br/>키트 제작 및 온라인 영상 · Kit design and online video · 2020 · 이응노미술관 특별프로그램, 대전 Lee Ungno Museum, Daejeon</figcaption></figure>
-<figure class="work"><img alt="시장의 색깔 — 플립북 박스 설치 전경" loading="lazy" src="image/image_032.jpg" width="1100" height="606"/><figcaption><span class="t-kr">시장의 색깔 (블루, 초록, 빨강, 녹색)</span><span class="t-en">Colors of the Market</span><br/>플립북 박스에 디지털 프린팅 · Digital printing on flipbook boxes · 50×31.5×61.4cm ×4 · 2019<span class="desc">재개발을 앞둔 대전 유성시장에서 오랫동안 장사를 해온 상인들과의 인터뷰를 바탕으로, 시장의 색깔과 장사하는 모습을 드로잉으로 담은 플립북 애니메이션과 인터뷰 영상.</span></figcaption></figure>
-<figure class="work"><img alt="이응노미술관 포토존과 체험존" loading="lazy" src="image/image_034.jpg" width="1100" height="306"/><figcaption><span class="t-kr">감각의 교감 : 오감으로 만나는 이응노예술</span><span class="t-en">Communion of the Senses</span><br/>전시 포토존 · 체험존 · 엽서 · Photo zone, experience zone, postcards · 2019 · 대전 이응노미술관 Lee Ungno Museum, Daejeon</figcaption></figure>
-
-</section>
+<div class="page-head"><h1>works</h1><p>Works</p></div><section><div class="wtabs" role="tablist"><button type="button" role="tab" class="wtab" data-cat="painting"><span class="t-kr">그림</span><span class="t-en">Painting</span></button><button type="button" role="tab" class="wtab" data-cat="analog-motion"><span class="t-kr">아날로그 모션</span><span class="t-en">Analog Motion</span></button><button type="button" role="tab" class="wtab" data-cat="media-art"><span class="t-kr">미디어 아트</span><span class="t-en">Media Art</span></button><button type="button" role="tab" class="wtab" data-cat="installation-art"><span class="t-kr">설치 미술</span><span class="t-en">Installation Art</span></button><button type="button" role="tab" class="wtab" data-cat="art-kit"><span class="t-kr">예술 키트</span><span class="t-en">Art Kit</span></button></div><div class="wcat" id="painting" role="tabpanel" data-empty="1"><p class="wempty">작품을 준비 중입니다 · Coming soon</p></div><div class="wcat" id="analog-motion" role="tabpanel"><figure class="work"><img alt="플립북 〈찰나의 시선〉 표지" loading="lazy" src="works/fleeting_gaze/moment_1_web.jpg" width="1800" height="1350"/><video controls playsinline preload="metadata" poster="works/fleeting_gaze/moment_2_poster.jpg" width="1298" height="1080"><source src="works/fleeting_gaze/moment_2_web.mp4" type="video/mp4"/>이 브라우저에서는 영상을 재생할 수 없습니다.</video><figcaption><span class="t-kr">찰나의 시선</span><span class="t-en">A Fleeting Gaze</span><br/>플립북 · Flipbook · 켡 저 by Gyeop · 출판 예술보부상 Published by Art Bobusang · 2026</figcaption></figure><figure class="work"><img alt="시장의 색깔 — 플립북 박스 설치 전경" loading="lazy" src="image/image_032.jpg" width="1100" height="606"/><figcaption><span class="t-kr">시장의 색깔 (블루, 초록, 빨강, 녹색)</span><span class="t-en">Colors of the Market</span><br/>플립북 박스에 디지털 프린팅 · Digital printing on flipbook boxes · 50×31.5×61.4cm ×4 · 2019<span class="desc">재개발을 앞둔 대전 유성시장에서 오랫동안 장사를 해온 상인들과의 인터뷰를 바탕으로, 시장의 색깔과 장사하는 모습을 드로잉으로 담은 플립북 애니메이션과 인터뷰 영상.</span></figcaption></figure></div><div class="wcat" id="media-art" role="tabpanel"><figure class="work"><img alt="장날_국화 · 장날_파라솔 · 단추" loading="lazy" src="image/image_062.jpg" width="1400" height="502"/><figcaption><span class="t-kr">장날_국화 · 장날_파라솔 · 단추</span><span class="t-en">Market Day_Chrysanthemum · Parasol · Buttons</span><br/>목판에 아크릴릭, 프로젝션 맵핑 애니메이션 · Acrylic on wood panel, projection mapping animation · 120×120cm, 150×150cm · 2022–2024</figcaption></figure><figure class="work"><img alt="원형 목판 위 맵핑 애니메이션 여섯 장면" loading="lazy" src="image/image_012.jpg" width="1100" height="962"/><figcaption><span class="t-kr">마음 — 원 안의 애니메이션</span><span class="t-en">Maeum — Animations within a Circle</span><br/>프로젝션 맵핑 애니메이션 · Projection mapping animation · 2024<span class="desc">만다라는 원(circle)을 뜻하는 산스크리트어로, 우주와 마음의 모양으로 표현되기도 한다. 내 안의 우주를 담는 원 안의 애니메이션 — 시장의 장날, 파라솔의 추상, 장례를 치르는 장날을 담은 영상들.</span></figcaption></figure><figure class="work"><img alt="공연 무대 위 맵핑" loading="lazy" src="image/image_043.jpg" width="470" height="667"/><figcaption><span class="t-kr">연결 융합 승화</span><span class="t-en">Connection · Fusion · Sublimation</span><br/>패브릭·조형물 위에 맵핑 · Mapping on fabric and sculptural objects · 50min · 2024 · 모두예술극장 Modu Art Theater</figcaption></figure></div><div class="wcat" id="installation-art" role="tabpanel"><figure class="work"><img alt="파라솔, 피어나다 — 조명 설치" loading="lazy" src="image/image_033.jpg" width="1096" height="1090"/><figcaption><span class="t-kr">파라솔, 피어나다</span><span class="t-en">Parasols in Bloom</span><br/>인터렉션 조명 목공 설치 · Interactive light and woodwork installation · 150×220cm · 2019</figcaption></figure><figure class="work"><img alt="이응노미술관 포토존과 체험존" loading="lazy" src="image/image_034.jpg" width="1100" height="306"/><figcaption><span class="t-kr">감각의 교감 : 오감으로 만나는 이응노예술</span><span class="t-en">Communion of the Senses</span><br/>전시 포토존 · 체험존 · 엽서 · Photo zone, experience zone, postcards · 2019 · 대전 이응노미술관 Lee Ungno Museum, Daejeon</figcaption></figure></div><div class="wcat" id="art-kit" role="tabpanel"><figure class="work"><img alt="웰컴 투 PP 온라인 영상 스크린샷 1" loading="lazy" src="image/image_029.jpg" width="1317" height="1047"/></figure><figure class="work"><img alt="웰컴 투 PP 온라인 영상 스크린샷 2" loading="lazy" src="image/image_030.jpg" width="766" height="433"/></figure><figure class="work"><img alt="웰컴 투 PP 온라인 영상 스크린샷 3" loading="lazy" src="image/image_031.jpg" width="766" height="433"/><figcaption><span class="t-kr">웰컴 투 PP (Paper Playground)</span><span class="t-en">Welcome to PP (Paper Playground)</span><br/>키트 제작 및 온라인 영상 · Kit design and online video · 2020 · 이응노미술관 특별프로그램, 대전 Lee Ungno Museum, Daejeon</figcaption></figure></div><script>(function(){
+var tabs=document.querySelectorAll('.wtab'),cats=document.querySelectorAll('.wcat');
+function show(id,push){
+  var ok=false;cats.forEach(function(c){if(c.id===id)ok=true;});
+  if(!ok){ id=cats[0].id; cats.forEach(function(c){ if(id===cats[0].id && cats[0].hasAttribute('data-empty') && !c.hasAttribute('data-empty') && id===cats[0].id){ id=c.id; } }); }
+  cats.forEach(function(c){c.hidden=(c.id!==id);});
+  tabs.forEach(function(t){var on=t.getAttribute('data-cat')===id;t.classList.toggle('on',on);t.setAttribute('aria-selected',on);});
+  if(push){try{history.replaceState(null,'','#'+id);}catch(e){}}
+  window.scrollTo(0,0);
+}
+tabs.forEach(function(t){t.addEventListener('click',function(){show(t.getAttribute('data-cat'),true);});});
+window.addEventListener('hashchange',function(){show(location.hash.slice(1),false);});
+show(location.hash.slice(1),false);
+})();</script></section>
 <footer><div class="foot-inner"><div class="foot-ribbon"></div><p>© 2026 박현지 (켡). All rights reserved.</p></div></footer><script>(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.work,.hero-fig').forEach(function(el){io.observe(el);});})();</script></body></html>
