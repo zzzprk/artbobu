@@ -105,6 +105,7 @@ footer{margin-top:96px;border-top:1px solid var(--line);scroll-margin-top:60px}
 .page-head h1::after{content:"";display:block;width:84px;height:3px;margin-top:16px;background:var(--ribbon);border-radius:3px}
 .page-head p{margin-top:14px;font-size:.85rem;color:var(--muted)}
 .home{min-height:calc(100vh - 120px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px}
+.artist-name b{font-size:.5em;display:inline-block;margin-top:.5em}
 .home .hero-fig{margin:36px auto 0;max-width:560px;opacity:1;transform:none}
 .menu{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 38px;margin-top:44px;font-family:var(--serif);font-size:1.15rem;letter-spacing:.2em}
 .menu a{position:relative;padding-bottom:4px}
@@ -119,7 +120,12 @@ footer{margin-top:96px;border-top:1px solid var(--line);scroll-margin-top:60px}
 .contact-list a{border-bottom:1px solid var(--line)}
 .contact-list a:hover{border-color:var(--ink)}
 @media (max-width:640px){.about-grid{grid-template-columns:1fr;gap:28px}.contact-list div{grid-template-columns:1fr;gap:2px}.nav-links{gap:12px;font-size:.72rem;letter-spacing:.06em}.nav-inner{flex-wrap:wrap}}
+
+.crit{max-width:760px}
+.crit-t{font-family:var(--serif);font-weight:600;font-size:1.25rem;line-height:1.5;margin-bottom:6px}
+.crit-a{color:var(--muted);font-size:.85rem;margin-bottom:28px}
+.crit p{margin-bottom:1.1em;font-size:.95rem}
 </style></head><body>
 <nav><div class="nav-inner"><a class="logo" href="index.html">켡 HYUNZ</a><div class="nav-links"><a href="about.html">about</a><a href="text.html">text</a><a href="exhibition.html">exhibition</a><a href="works.html">works</a><a href="contact.html">contact</a></div></div></nav>
-<main class="home"><div class="artist-name">박 현 지<br/><b>PARK HYUN JI</b><br/>켡</div><figure class="hero-fig"><img alt="시장 사람들과 무지개 바람개비가 어우러진 세밀 드로잉" src="image/image_001.jpg" width="1200" height="1201"/><figcaption>연결된 사람들, 디지털 드로잉<br/>Connected People, Digital drawing</figcaption></figure><div class="menu"><a href="about.html">about</a><a href="text.html">text</a><a href="exhibition.html">exhibition</a><a href="works.html">works</a><a href="contact.html">contact</a></div></main>
+<main class="home"><div class="artist-name">켡<br/><b>PARK HYUN JI</b></div><figure class="hero-fig"><img alt="시장 사람들과 무지개 바람개비가 어우러진 세밀 드로잉" src="image/image_001.jpg" width="1200" height="1201"/><figcaption>연결된 사람들, 디지털 드로잉<br/>Connected People, Digital drawing</figcaption></figure><div class="menu"><a href="about.html">about</a><a href="text.html">text</a><a href="exhibition.html">exhibition</a><a href="works.html">works</a><a href="contact.html">contact</a></div></main>
 <footer><div class="foot-inner"><div class="foot-ribbon"></div><p>© 2026 박현지 (켡). All rights reserved.</p></div></footer><script>(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});document.querySelectorAll('.work,.hero-fig').forEach(function(el){io.observe(el);});})();</script></body></html>
