@@ -12,7 +12,7 @@
   --line:#E8E4DB;
   --serif:'Noto Serif KR', serif;
   --sans:'Noto Sans KR', sans-serif;
-  --ribbon:linear-gradient(90deg,#E84B4B,#F2903A,#F2CE3A,#5DB35E,#4B7FD4,#8B5DB3);
+  --ribbon:linear-gradient(90deg,#FF48B0,#FF48B0 18%,#82D8D5 82%,#82D8D5);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -105,6 +105,7 @@ footer{margin-top:96px;border-top:1px solid var(--line);scroll-margin-top:60px}
 .page-head h1::after{content:"";display:block;width:84px;height:3px;margin-top:16px;background:var(--ribbon);border-radius:3px}
 .page-head p{margin-top:14px;font-size:.85rem;color:var(--muted)}
 .home{min-height:calc(100vh - 120px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px}
+.artist-name b{font-size:.5em;display:inline-block;margin-top:.5em}
 .home .hero-fig{margin:36px auto 0;max-width:560px;opacity:1;transform:none}
 .menu{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 38px;margin-top:44px;font-family:var(--serif);font-size:1.15rem;letter-spacing:.2em}
 .menu a{position:relative;padding-bottom:4px}
@@ -119,6 +120,63 @@ footer{margin-top:96px;border-top:1px solid var(--line);scroll-margin-top:60px}
 .contact-list a{border-bottom:1px solid var(--line)}
 .contact-list a:hover{border-color:var(--ink)}
 @media (max-width:640px){.about-grid{grid-template-columns:1fr;gap:28px}.contact-list div{grid-template-columns:1fr;gap:2px}.nav-links{gap:12px;font-size:.72rem;letter-spacing:.06em}.nav-inner{flex-wrap:wrap}}
+
+.crit{max-width:760px}
+.crit-t{font-family:var(--serif);font-weight:600;font-size:1.25rem;line-height:1.5;margin-bottom:6px}
+.crit-a{color:var(--muted);font-size:.85rem;margin-bottom:28px}
+.crit p{margin-bottom:1.1em;font-size:.95rem}
+
+.page-head h1{display:inline-block}
+.page-head h1::after{width:100%}
+.foot-ribbon{display:none}
+.foot-inner p{display:inline-block;position:relative;padding-top:18px}
+.foot-inner p::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;border-radius:3px;background:var(--ribbon)}
+
+:root{--wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'%3E%3Cpath d='M0 4 Q4 0.2 8 4 T16 4' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round'/%3E%3C/svg%3E")}
+.logo::after,.menu a::after,.page-head h1::after,.foot-inner p::before{-webkit-mask:var(--wave) repeat-x 0 50%/14px 7px;mask:var(--wave) repeat-x 0 50%/14px 7px;border-radius:0;mix-blend-mode:multiply;opacity:.92}
+.logo::after{height:7px;bottom:-5px}
+.menu a::after{height:7px;bottom:-4px}
+.page-head h1::after{height:9px;margin-top:12px;-webkit-mask-size:18px 9px;mask-size:18px 9px}
+.foot-inner p::before{height:7px}
+
+.yt{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.exh-list{border-bottom:1px solid var(--line)}
+.exh{border-top:1px solid var(--line)}
+.exh summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:72px 1fr 24px;gap:18px;align-items:start;padding:24px 4px;transition:background .2s}
+.exh summary::-webkit-details-marker{display:none}
+.exh summary:hover{background:rgba(0,0,0,.025)}
+.exh .y{font-family:var(--serif);font-weight:300;font-size:1.5rem;letter-spacing:.04em;line-height:1.3}
+.exh .meta{display:block}
+.exh .meta .t-kr{display:block;font-family:var(--serif);font-weight:600;font-size:1.02rem;line-height:1.5}
+.exh .meta .t-en{display:block;font-style:italic;color:var(--muted);font-size:.84rem;margin-top:2px}
+.exh .meta .vn{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}
+.exh .tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;padding-top:4px}
+.exh .tag{font-size:.7rem;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:2px 10px;white-space:nowrap}
+.exh .chev{width:10px;height:10px;margin-top:10px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);transition:transform .25s}
+.exh[open] .chev{transform:rotate(225deg)}
+.exh[open] summary{background:rgba(0,0,0,.02)}
+.exh-body{padding:36px 0 24px}
+.exh-body .work{margin:0 auto 72px}
+.exh-gallery{column-count:2;column-gap:12px;max-width:880px;margin:0 auto 24px}
+.exh-gallery a{display:block;margin-bottom:12px;break-inside:avoid}
+.exh-gallery img{width:100%;height:auto;border:1px solid var(--line)}
+@media (max-width:640px){.exh-gallery{column-count:1}}
+.exh-body .work:last-child{margin-bottom:24px}
+@media (max-width:640px){
+  .exh summary{grid-template-columns:52px 1fr 18px;gap:12px}
+  .exh .y{font-size:1.15rem}
+}
+
+.wtabs{display:flex;gap:10px 34px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:56px}
+.wtab{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:10px 2px 12px;cursor:pointer;font:inherit;color:var(--muted);text-align:left;transition:color .2s,border-color .2s}
+.wtab .t-kr{font-family:var(--serif);font-weight:600;font-size:1.05rem}
+.wtab .t-en{font-style:italic;font-size:.8rem;margin-left:.5em}
+.wtab:hover{color:var(--ink)}
+.wtab.on{color:var(--ink);border-bottom-color:var(--ink)}
+.wcat[hidden]{display:none}
+.wempty{color:var(--muted);font-size:.9rem;padding:40px 0}
+.work video{display:block;width:100%;max-width:640px;height:auto;margin:24px auto 0;border:1px solid var(--line);background:#000}
+@media (max-width:640px){.wtabs{gap:6px 20px}.wtab .t-en{display:block;margin-left:0}}
 </style></head><body>
 <nav><div class="nav-inner"><a class="logo" href="index.html">켡 HYUNZ</a><div class="nav-links"><a href="about.html">about</a><a href="text.html">text</a><a href="exhibition.html">exhibition</a><a href="works.html">works</a><a href="contact.html" class="cur">contact</a></div></div></nav>
 <div class="page-head"><h1>contact</h1><p>작업 문의 · Contact</p></div><section><div class="contact-list"><div><span class="k">Email</span><span><a href="mailto:hyunjiworld@naver.com">hyunjiworld@naver.com</a></span></div><div><span class="k">Instagram</span><span><a href="https://instagram.com/art_vma">@art_vma</a> · <a href="https://instagram.com/artbobu">@artbobu</a></span></div></div></section>
